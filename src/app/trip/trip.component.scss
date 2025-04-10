@@ -1,0 +1,140 @@
+.trip-container{
+    padding: 20px;
+    &__header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        input{
+            border:1px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+            height: 30px;
+            margin-right: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            &:focus{
+                border: 1px solid aqua;
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        &__button{
+            outline: none;
+            background-color: aqua;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+        }
+    }
+    &__journey{
+        display: flex;
+        margin-top: 40px;
+        height: 500px;
+        &__section{
+         position: relative;
+         display: flex;
+         align-items: center;
+             &__details{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+            &--up{
+                height: 95px;
+            }
+            .dot {
+                width: 16px;
+                height: 16px;
+                background-color: blue;
+                border-radius: 50%;
+                z-index: 1;
+                }
+            }
+            .label{
+                display: flex;
+                padding: 10px 5px;
+                font-weight: 500;
+                font-size: 14px;
+                position: absolute;
+                div{
+                    padding: 0px 2px;
+                }
+            }
+            .line{
+                height: 2px;
+                background-color: black;
+                flex-grow: 1;
+                 min-width: 100px;
+
+            }
+            .up-lane{
+                margin-bottom: 85px;
+            }
+            .arrow{
+                display: flex;
+                align-items: center;
+            }
+            .triangle-up {
+                transform: rotate(90deg);
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 10px solid black; /* Triangle color */
+              }
+              .curved-line {
+                width: 100px;
+                height: 70px;
+                border: 2px solid orange;
+                border-color: orange transparent transparent transparent;
+                border-radius: 50%;
+                background: none;
+                border-style: solid;
+                border-width: 2px;
+                transform: rotate(333deg);
+                margin-left: -8px;
+              }
+              .downcurved-line {
+                width: 100px;
+                height: 70px;
+                border: 2px solid orange;
+                border-color: orange transparent transparent transparent;
+                border-radius: 50%;
+                background: none;
+                border-style: solid;
+                border-width: 2px;
+                transform: rotate(385deg);
+                margin-left: -8px;
+              }
+              
+        }   
+    }
+}
+
+/* journey.component.css */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .point-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .arrow-svg {
+    margin-bottom: -10px;
+  }
+  
+  .label {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    // padding: 0px ;
+  }
+  

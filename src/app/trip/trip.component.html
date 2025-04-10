@@ -1,0 +1,30 @@
+<div class="trip-container">
+    <div class="trip-container__header">
+      <input type="text" placeholder="Start Point" [(ngModel)]="startPoint" class="border p-2 rounded">
+      <input type="text" placeholder="End Point" [(ngModel)]="endPoint" class="border p-2 rounded">
+      <button (click)="addJourney(startPoint,endPoint)" class="trip-container__header__button">Add Trip</button>
+    </div>
+     <div class="trip-container__journey">
+        <ng-container *ngFor="let journey of journeys; let i = index">
+        <div class="trip-container__journey__section" [ngClass]="{ 'up-lane': journey.lane === 'up' }">
+            <!-- Connector line from previous dot, not for the first item -->
+            <div *ngIf="journey.visual == 'line'" class="line" [ngClass]="{ 'up-lane': journey.lane === 'up' }"></div>
+            <div *ngIf="journey.visual == 'arrow'" class="arrow" [ngClass]="{ 'up-lane': journey.lane === 'up' }"><div  class="line"></div><div class="triangle-up"></div></div>
+            <div *ngIf="journey.visual == 'curve'"><div class="curved-line"></div>
+            </div>
+            <div *ngIf="journey.visual == 'downcurve'"><div class="downcurved-line"></div>
+            </div>
+            <div class="trip-container__journey__section__details" [ngClass]="{ 'trip-container__journey__section__details--up': journey.lane === 'up' }">
+                <div class="dot"></div>
+                <div class="label">
+                    <div>{{ journey.start }}</div>
+                    <div>-</div> 
+                    <div> {{ journey.end }}</div>
+                </div>
+             </div>
+           
+      </div>
+    </ng-container>
+  </div>  
+</div>
+  
